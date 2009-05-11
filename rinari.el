@@ -284,7 +284,7 @@ don't include an '='."
   (interactive "r\nsName your partial: ")
   (let* ((path (buffer-file-name)) ending)
     (if (string-match "view" path)
-	(let ((ending (and (string-match ".+?\\(\\..*\\)" path)
+	(let ((ending (and (string-match ".+?\\(\\.[^/]*\\)$" path)
 			   (match-string 1 path)))
 	      (partial-name
 	       (replace-regexp-in-string "[[:space:]]+" "_" partial-name)))
